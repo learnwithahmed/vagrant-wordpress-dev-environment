@@ -1,0 +1,31 @@
+# Max file upload size
+#php_value upload_max_filesize 64M
+
+#<Files .env>
+#Order Allow,Deny
+#Deny from all
+#</Files>
+#
+## compress svg
+#<ifmodule mod_deflate.c>
+#AddType image/svg+xml .svg
+#AddOutputFilterByType DEFLATE image/svg+xml
+#</ifmodule>
+#
+## cache svg
+#<IfModule mod_expires.c>
+#ExpiresActive on
+#ExpiresByType image/svg+xml "access plus 1 month"
+#</IfModule>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+# END WordPress
