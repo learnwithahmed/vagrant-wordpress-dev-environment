@@ -1,0 +1,41 @@
+{
+  "name": "vagrant-wordpress-dev-enviroment",
+  "description": "A Vagrant base development enviroment for modern wordpress development",
+  "type": "project",
+  "minimum-stability": "stable",
+  "support": {
+    "issues": ""
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "~1.0.12",
+    "wpackagist-plugin/akismet": "4.0.8",
+    "wpackagist-plugin/contact-form-7": "5.0.4",
+    "wpackagist-plugin/jquery-validation-for-contact-form-7": "4.1",
+    "wpackagist-plugin/svg-support": "2.3.15",
+    "wpackagist-plugin/advanced-custom-fields-font-awesome": "2.1.2",
+    "johnpbloch/wordpress": "4.9.8"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "wp"
+  }
+}
