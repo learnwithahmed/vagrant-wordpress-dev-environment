@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     end
 
     # Required for NFS to work, pick any local IP
-    config.vm.network :private_network, ip: '192.168.221.19'
+    config.vm.network :private_network, ip: '192.168.221.20'
     # Use NFS for shared folders for better performance
     config.vm.synced_folder "./", "/var/www", :nfs => true
 
