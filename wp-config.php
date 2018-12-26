@@ -21,9 +21,9 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('OWC_ENVIRONMENT', getenv('APP_ENV') ?: 'local');
+define('VWDE_ENVIRONMENT', getenv('APP_ENV') ?: 'local');
 
-if ( OWC_ENVIRONMENT == 'local' ) {
+if ( VWDE_ENVIRONMENT == 'local' ) {
 	define('DB_NAME', getenv('DB_NAME'));
 	define('DB_USER', getenv('DB_USER'));
 	define('DB_PASSWORD', getenv('DB_PASSWORD'));
@@ -49,7 +49,9 @@ if ( OWC_ENVIRONMENT == 'local' ) {
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', 'utf8mb4_unicode_ci');
 
+// Wordpress Dir
 define('WP_SITEURL', WP_HOME . '/wp');
+// Symlink wp-content from wp to ./wp-content
 define('WP_CONTENT_URL', WP_HOME . '/wp-content');
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/wp-content');
 
