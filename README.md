@@ -1,8 +1,11 @@
-# Vagrant based development environment
+# Vagrant Based Wordpress Development Environment
 
 a Vagrant configuration designed for development of WordPress plugins, themes, or websites.
 
-## Requirements
+- [System Requirements](#system-requirements)
+- [Installation](#installation)
+
+## System Requirements
 
 Install all of the followings:
 
@@ -11,28 +14,39 @@ Install all of the followings:
 - [vagrant-hostmanager](https://github.com/smdahlen/vagrant-hostmanager#installation)
 - [Node.js](http://nodejs.org/)
 
-## Configuration
+## Installation
 
-In your root directory run the following commands:
+```sh
+# Clone repository
+$ git clone git@github.com:code2gether/vagrant-wordpress-dev-environment.git
+# or if you want to rename the theme directory name
+$ git@github.com:code2gether/aylin.git <theme-name>
+```
 
-1. Run `vagrant up` to start a Vagrant environment.
-2. Run `composer install`
+Change into your directory `cd vagrant-wordpress-dev-environment` directory run the following commands:
 
-Install all NPM packages, change your theme directory:
+```sh
+1. vagrant up # start a Vagrant environment.
+2. composer install # install packages for wordpress
+```
 
-- cd `wp-content/themes/your-theme`
-- Run `npm install` then `npm run build` to compile all your `SCSS`, and `JS` files
+## Theme Installation
 
-## Run
+If you notice after running `vagrant up`, a new folder `wp-content` created in your root project, this is because it symlinked `wp-content` to `wp/wp-content` please don't mess with `wp` directory. So now you can add your own theme to `themes` inside `wp-content` directory.
+
+## Aylin Starter Theme
+
+To get our starter wordpress theme
+
+1. change your directory into `cd wp-content/themes/` in your root files.
+2. Clone our starter theme `git clone https://github.com/code2gether/aylin`
+
+you can find more informtion on our theme readme file.
+
+## Development
 
 - vagrant up
-- cd wp-content/themes/like-v.6.0
-- npm run start
+- cd wp-content/themes/aylin
+- yarn start | npm run start
 
-## General notes
-
-- Anytime you want to run vagrant run `vagrant up`. To stop it run `vagrant halt`.
-
-- Keep in mind, when you add add/change styling in your `SCSS` files you need to compile your `SCSS` files by:
-  - `cd wp-content/themes/your-theme`
-  - either you run `npm run build` or `npm run start` to keep watching changes.
+If you want to stop vagrant you need to run `vagrant halt` in command line.
