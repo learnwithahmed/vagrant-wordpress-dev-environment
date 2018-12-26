@@ -20,7 +20,6 @@
     "wpackagist-plugin/advanced-custom-fields": "5.7.7",
     "wpackagist-plugin/advanced-custom-fields-font-awesome": "2.1.2",
     "wpackagist-plugin/jquery-validation-for-contact-form-7": "4.1",
-    "wpackagist-theme/twentyseventeen": "1.7",
     "johnpbloch/wordpress": "4.9.8"
   },
   "extra": {
